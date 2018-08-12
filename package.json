@@ -1,0 +1,17 @@
+{
+  "name": "polisen-events-downloader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^7.0.0",
+    "node-fetch": "^2.1.2",
+    "tableify": "^1.1.0"
+  }
+}
