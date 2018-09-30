@@ -7,16 +7,22 @@ const jsonPath = "/data/events.json";
 const filePath = "/data/index.html";
 
 const updateTime = 60000;
+const fetchTimeout = 30000;
 
 download();
 
 async function download() {
     console.log('Start downloading', new Date());
     try {
-        const res = await fetch('https://polisen.se/api/events');
-        const json = await res.json();
+        const res = await fetch('https://polisen.se/api/events', {
+            timeout: fetchTimeout
+        });
 
         console.log('Download complete', new Date());
+
+        const json = await res.json();
+
+        console.log('Analyzing json', new Date());
 
         await fse.ensureFile(jsonPath);
 
